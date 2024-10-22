@@ -823,7 +823,7 @@ function displayWeekInfo(weekType) {
 
         // Thông tin lễ và bài đọc
         const feastAndReadingCell = document.createElement('td');
-        feastAndReadingCell.innerHTML = feastAndReadingContent;
+        feastAndReadingCell.innerHTML = updateFeastAndReadingContent(currentDay, feastAndReadingContent);
         row.appendChild(feastAndReadingCell);
 
         reportTableBody.appendChild(row);
