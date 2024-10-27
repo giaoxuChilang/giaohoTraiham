@@ -96,20 +96,22 @@
             }
         }
 
+            for (let m = 0; m < 12; m++) {
+                let firstThursday = getFirstSpecificDayOfMonth(year, m, 4); // First Thursday
+                let firstFriday = getFirstSpecificDayOfMonth(year, m, 5); // First Friday
             
-
-            if (month === 4) { // Tháng 5 (lưu ý: tháng trong JavaScript bắt đầu từ 0)
-                const firstSundayOfMay = getFirstSundayOfMonth(year, month);
-                const lastSundayOfMay = getLastSundayOfMonth(year, month);
+                if (!isBetweenAshWednesdayAndPentecost(firstThursday) && !isBetweenAshWednesdayAndPentecost(firstFriday)) {
             
-                // Thêm sự kiện Chủ nhật đầu tháng 5: "Dâng Hoa Kính Đức Mẹ"
-                if (isSameDate(inputDate, firstSundayOfMay)) {
-                    OptionFeasts.push({ name: "Sau Lễ Dâng Hoa khai Mạc Thánh Hoa", date: firstSundayOfMay });
-                }
+                           if (m !== 9 && m !== 0) {
             
-                // Thêm sự kiện Chủ nhật cuối tháng 5: "Dâng Hoa Kết thúc tháng Hoa"
-                if (isSameDate(inputDate, lastSundayOfMay)) {
-                    OptionFeasts.push({ name: "Sau Lễ Dâng Hoa kết thúc tháng Hoa", date: lastSundayOfMay });
+                        if (!(m === 10 && firstFriday.getDate() === 1) && firstFriday < firstSundayOfAdvent && !isDuringLunarNewYear(firstFriday)) {
+                            OptionFeasts.push({ name: "Tối 19 giờ Đàng Thánh Giá", date: firstFriday });
+                        }
+            
+                        if (!isDuringLunarNewYear(firstThursday)) {
+                            OptionFeasts.push({ name: "Tối 19 giờ Chầu Thánh Thể", date: firstThursday });
+                        }
+                    }
                 }
             }
 
