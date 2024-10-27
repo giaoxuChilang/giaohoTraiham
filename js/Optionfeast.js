@@ -96,21 +96,16 @@
             }
         }
 
-            for (let m = 0; m < 12; m++) {
-                let firstThursday = getFirstSpecificDayOfMonth(year, m, 4); // First Thursday
-                let firstFriday = getFirstSpecificDayOfMonth(year, m, 5); // First Friday
-            
-                if (!isBetweenAshWednesdayAndPentecost(firstThursday) && !isBetweenAshWednesdayAndPentecost(firstFriday)) {
-            
-                           if (m !== 9 && m !== 0) {
-            
-                        if (!(m === 10 && firstFriday.getDate() === 1) && firstFriday < firstSundayOfAdvent && !isDuringLunarNewYear(firstFriday)) {
-                            OptionFeasts.push({ name: "Chiều 14:45 giờ Đàng Thánh Giá", date: firstFriday });
-                        }
-            
-                    }
-                }
+ for (let m = 0; m < 12; m++) {
+    let firstFriday = getFirstSpecificDayOfMonth(year, m, 5); // First Friday
+    if (!isBetweenAshWednesdayAndPentecost(firstFriday)) {
+        if (m !== 9 && m !== 0) {
+            if (!(m === 10 && firstFriday.getDate() === 1) && firstFriday < firstSundayOfAdvent && !isDuringLunarNewYear(firstFriday)) {
+                OptionFeasts.push({ name: "Chiều 16 giờ 45 Đàng Thánh Giá", date: firstFriday });
             }
+        }
+    }
+}
 
 
         // Lọc ra các ngày lễ trùng với ngày truyền vào
