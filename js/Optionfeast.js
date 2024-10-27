@@ -91,30 +91,6 @@ for (let m = 0; m < 12; m++) {
 }
 
 
-for (let m = 0; m < 12; m++) {
-    let firstFriday = getFirstSpecificDayOfMonth(year, m, 5); // First Friday
-
-    // Exclude events during the period from Ash Wednesday to Pentecost
-    if (!isBetweenAshWednesdayAndPentecost(firstFriday)) {
-
-        // Exclude January and October for Stations of the Cross
-        if (m !== 9 && m !== 0) {
-
-            // Check specifically if it's November and the first Friday falls on the 1st
-            if (m === 10 && firstFriday.getDate() === 1) {
-                continue; // Skip this iteration if it's November 1 on a Friday
-            }
-
-            // Add Stations of the Cross if:
-            // - It's before the first Sunday of Advent
-            // - It's not during the Lunar New Year window
-            if (firstFriday < firstSundayOfAdvent && !isDuringLunarNewYear(firstFriday)) {
-                OptionFeasts.push({ name: "Chiều 16 giờ 45 Đàng Thánh Giá", date: firstFriday });
-            }
-        }
-    }
-}
-
 
 
         // Lọc ra các ngày lễ trùng với ngày truyền vào
