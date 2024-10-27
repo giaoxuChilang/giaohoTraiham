@@ -105,12 +105,9 @@
                            if (m !== 9 && m !== 0) {
             
                         if (!(m === 10 && firstFriday.getDate() === 1) && firstFriday < firstSundayOfAdvent && !isDuringLunarNewYear(firstFriday)) {
-                            OptionFeasts.push({ name: "Tối 19 giờ Đàng Thánh Giá", date: firstFriday });
+                            OptionFeasts.push({ name: "Chiều 14:45 giờ Đàng Thánh Giá", date: firstFriday });
                         }
             
-                        if (!isDuringLunarNewYear(firstThursday)) {
-                            OptionFeasts.push({ name: "Tối 19 giờ Chầu Thánh Thể", date: firstThursday });
-                        }
                     }
                 }
             }
