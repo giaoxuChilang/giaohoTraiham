@@ -75,26 +75,21 @@
                 return date >= lunarNewYearStart && date <= lunarNewYearEnd;
             }
 
-            // Thêm sự kiện cho thứ Năm và thứ Sáu đầu tháng nếu thỏa mãn các điều kiện
-        // Thêm sự kiện cho thứ Năm và thứ Sáu đầu tháng nếu thỏa mãn các điều kiện
-        for (let m = 0; m < 12; m++) {
-            let firstThursday = getFirstSpecificDayOfMonth(year, m, 4); // Thứ Năm đầu tiên
-            let firstFriday = getFirstSpecificDayOfMonth(year, m, 5); // Thứ Sáu đầu tiên
+for (let m = 0; m < 12; m++) {
+    let firstFriday = getFirstSpecificDayOfMonth(year, m, 5); // First Friday
 
-            // Điều kiện không có Chầu Thánh Thể và Đàng Thánh Giá trong khoảng từ Thứ Tư Lễ Tro tới Lễ Chúa Thánh Thần
-            if (!isBetweenAshWednesdayAndPentecost(firstThursday) && !isBetweenAshWednesdayAndPentecost(firstFriday)) {
-                
-                // Điều kiện không có Chầu Thánh Thể và Đàng Thánh Giá trong tháng 1 và tháng 10
-                if (m !== 9 && m !== 0) {
-                    // Điều kiện không có Đàng Thánh Giá nếu ngày thứ Sáu đầu tháng sau Chủ Nhật thứ nhất của Mùa Vọng
-                    if (firstFriday < firstSundayOfAdvent && !isDuringLunarNewYear(firstFriday)) {
-                        OptionFeasts.push({ name: "chiều 16:45 Đàng Thánh Giá", date: firstFriday });
-                    }
+    if (!isBetweenAshWednesdayAndPentecost(firstFriday)) {
 
+        // Exclude January and October for Stations of the Cross
+        if (m !== 9 && m !== 0) {
 
-                }
+            if (!(m === 10 && firstFriday.getDate() === 1) && firstFriday < firstSundayOfAdvent && !isDuringLunarNewYear(firstFriday)) {
+                OptionFeasts.push({ name: "Chiều 16 giờ 45 Đàng Thánh Giá", date: firstFriday });
             }
         }
+    }
+}
+
 
  for (let m = 0; m < 12; m++) {
     let firstFriday = getFirstSpecificDayOfMonth(year, m, 5); // First Friday
