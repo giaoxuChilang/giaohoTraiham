@@ -2,7 +2,7 @@ window.bibledailyOrdinary1Readings =
 {
     "5446": {
     "firstReading": {
-      "excerpt": "I Is 61, 9-11",
+      "excerpt": "I Is 61, 9-11a",
       "info": "“Tôi hớn hở vui mừng trong Chúa”.",
       "title": "Trích sách tiên tri Isaia",
       "content": "Dòng dõi chúng sẽ được nổi danh giữa các dân tộc; miêu duệ chúng sẽ được biết đến giữa chư dân. Tất cả những ai thấy họ, đều nhận biết họ là dòng dõi được Chúa chúc phúc. Tôi hớn hở vui mừng trong Chúa, và lòng tôi hoan hỉ trong Chúa tôi, vì Người đã mặc cho tôi áo phần rỗi và choàng áo công chính cho tôi, như tân lang đầu đội triều thiên, như tân nương trang sức bằng ngọc bảo. Như đất đâm chồi, như vườn nảy lộc, Chúa cũng làm phát sinh công chính và lời ca tụng trước mặt muôn dân. ",
